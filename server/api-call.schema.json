@@ -1,0 +1,35 @@
+{
+    "title": "api-call",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "id of the client",
+            "type": "integer"
+        },
+        "function": {
+            "description": "name of the function",
+            "type": "string"
+        },
+        "message": {
+            "description": "message description for logging",
+            "type": "string"
+        },
+        "arguments": {
+            "description": "array of arguments",
+            "type": "array",
+            "items": {
+                "type": [
+                    "number",
+                    "string"
+                ]
+            },
+            "default": []
+        }
+    },
+    "required": [
+        "id",
+        "function",
+        "message",
+        "arguments"
+    ]
+}

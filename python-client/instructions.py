@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+import json
+import time
+from datetime import datetime
+
+async def robotInstructions(self):
+    # example instructions
+    allObjectPositions = await self.getAllObjectPositions()
+    print(allObjectPositions)
+    time.sleep(2)
+    await self.rotateSegments([36.5, 20, 52, 0, 74, -95.5])
+    time.sleep(2)
+    await self.rotateSegments([36.5, 40.75, 52, 0, 75, -99])
+    time.sleep(1)
+    gripperPosition = await self.getGripperPosition()
+    print(gripperPosition)
+    await self.rotateGripper([34.25])
+    time.sleep(2)
+    holdingObject = await self.isHoldingObject()
+    print(holdingObject)
+    await self.rotateSegments([36.5, 5, -39, 0, 0, -99])
+    time.sleep(2)
+    await self.rotateSegments([-118, 0, -35, 0, 22, -99])
+    time.sleep(3)
+    await self.rotateSegments([-123, 33, 31, 0, 22, -86])
+    time.sleep(3)
+    await self.rotateGripper([0])
+    time.sleep(2)
+    await self.rotateSegments([37.25, 20, 52, 0, 74, -95.5])
+    time.sleep(3)
+    await self.rotateSegments([39.25, 25.75, 52, 0, 0, -99])
+    time.sleep(3)
+    await self.rotateSegments([39, 33.5, 102.5, 0, -41, -91.5])
+    time.sleep(2.5)
+    await self.rotateGripper([37.5])
+    time.sleep(2)
+    await self.rotateSegments([36, 0, -39, 0, 0, -99])
+    time.sleep(2.5)
+    await self.rotateSegments([-123, 0, -33, 0, 22, -99])
+    time.sleep(3)
+    await self.rotateSegments([-119.5, 33, 32, -40, 22, -86])
+    time.sleep(3)
+    await self.rotateGripper([0])
